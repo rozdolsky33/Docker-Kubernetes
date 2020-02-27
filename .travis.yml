@@ -3,13 +3,11 @@ node_js:
   - "13.7.0"
 services:
   - docker
-
 before_install:
   - docker build -t rozdolsky33/react-test -f ./client/Dockerfile.dev ./client
 
 script:
   - docker run -e CI=true rozdolsky33/react-test npm test -- --coverage
-
 after_success:
   - docker build -t rozdolsky33/multi-client ./client
   - docker build -t rozdolsky33/multi-nginx ./nginx
@@ -24,3 +22,4 @@ after_success:
   - docker push rozdolsky33/multi-nginx
   - docker push rozdolsky33/multi-service
   - docker push rozdolsky33/multi-worker
+#no images on  dockerHub
