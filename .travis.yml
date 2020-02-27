@@ -15,7 +15,7 @@ after_success:
   - docker build -t rozdolsky33/multi-worker ./worker
   #Pushe images to the dockerHub
   # - login the docker with one command
-  - echo "$DOOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     #retrive docker pass from env | input of pass with a docker id expect to recive pass over stdin
   #Pushe images to  dockerHub
   - docker push rozdolsky33/multi-client
