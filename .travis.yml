@@ -10,8 +10,8 @@ script:
   - docker run -e CI=true rozdolsky33/react-test npm test -- --coverage
 after_success:
   - docker build -t rozdolsky33/multi-client ./client
-  - docker build -t rozdolsky33/multi-nginx ./nginx
-  - docker build -t rozdolsky33/multi-service ./service
+  - docker build -t rozdolsky33/multi-nginx ./ngnix
+  - docker build -t rozdolsky33/multi-service ./server
   - docker build -t rozdolsky33/multi-worker ./worker
   #Pushe images to the dockerHub
   # - login the docker with one command
