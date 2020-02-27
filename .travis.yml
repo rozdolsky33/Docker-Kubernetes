@@ -22,4 +22,4 @@ after_success:
   - docker push rozdolsky33/multi-nginx
   - docker push rozdolsky33/multi-service
   - docker push rozdolsky33/multi-worker
-#no images on  dockerHub
+    #no images on  dockerHub
