@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "13.7.0"
+  - '13.7.0'
 services:
   - docker
 before_install:
@@ -19,7 +19,7 @@ after_success:
     #retrive docker pass from env | input of pass with a docker id expect to recive pass over stdin
   #Pushe images to  dockerHub
   - docker push rozdolsky33/multi-client
+  - docker push rozdolsky33/multi-worker
   - docker push rozdolsky33/multi-nginx
   - docker push rozdolsky33/multi-service
-  - docker push rozdolsky33/multi-worker
     #no images on  dockerHub
