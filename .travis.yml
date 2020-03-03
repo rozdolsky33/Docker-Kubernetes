@@ -23,3 +23,16 @@ after_success:
   - docker push rozdolsky33/multi-nginx
   - docker push rozdolsky33/multi-service
     #no images on  dockerHub
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: us-east-1
+  app: MultiDocker-env
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-us-east-1-651261648885
+  bucker_patch: docker multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secured: $AWS_SECRET_KEY
